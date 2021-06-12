@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">RateItApp</string>
+    <string name="update_profile">Update Profile</string>
+    <string name="what_s_on_your_mind">What\'s on your mind ?</string>
+    <string name="add_photo">Add photo</string>
+    <string name="post">POST</string>
+</resources>

@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "497926815413",
+    "project_id": "rateitapp-4b471",
+    "storage_bucket": "rateitapp-4b471.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:497926815413:android:0c07cdd129d066955e08fc",
+        "android_client_info": {
+          "package_name": "com.cu.rateitapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "497926815413-phlmm0u4jgj0lvpaeu9bntq8blu03q3e.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.cu.rateitapp",
+            "certificate_hash": "bca2a08f681a8e0032d67ad6a2103b258f6ac63c"
+          }
+        },
+        {
+          "client_id": "497926815413-jubbm8cinan7r28g978030mpnbel5kih.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDCVrM5YAztQj5R8srxRbOjwBnKfcJ1KEE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "497926815413-jubbm8cinan7r28g978030mpnbel5kih.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
