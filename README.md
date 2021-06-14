@@ -41,7 +41,7 @@
 
 ### Post (Image/text)
 
-<img src="https://github.com/bisht2961/RateitApp/blob/master/app/sampledata/Screenshot_1623507659.png" height="500" width="300" ></a>
+<img src="https://github.com/bisht2961/RateitApp/blob/master/app/sampledata/Screenshot_20210614-141113.png" height="500" width="300" ></a>
 - Click add Photo to upload Image and select from the devices and type description about image or any text along to show in the edittext box.
 - Last Click Post to upload.
 
