@@ -2,9 +2,9 @@
 ![Logo Image](https://github.com/bisht2961/RateitApp/blob/master/app/src/main/res/drawable/logo.png )
 
 > This is a social media app where you post text and images.
+
 <img src="https://github.com/bisht2961/RateitApp/blob/master/app/sampledata/Screenshot_20210614-133231.png" height="500" width="300" >
 </a>
-
 ---
 
 
@@ -46,9 +46,16 @@
 - Last Click Post to upload.
 
 ## View Profile 
+<p align="center">
+  <img src="https://github.com/bisht2961/RateitApp/blob/master/app/sampledata/Screenshot_20210614-141835.png" width="256" height="455">
+  <img src="https://github.com/bisht2961/RateitApp/blob/master/app/sampledata/Screenshot_20210614-141844.png" width="256" height="455">
+
+</p>
 - Click at the <img src="https://github.com/bisht2961/RateitApp/blob/master/app/sampledata/user_image_.png" height="20" width="20" ></a> icon to display yours profile
 - Click at the image to change it.
 - Click at the username or displayname edittext box to change it.
 - After changes has been done. Click Update Profile button to update changes.
+
+- Click at image of other to view their profile.
 
 [Back To The Top](#read-me-template)
