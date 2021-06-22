@@ -30,7 +30,6 @@ class AddPostActivity : AppCompatActivity() {
             uploadImage()
         }
     }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityAddPostBinding.inflate(layoutInflater)

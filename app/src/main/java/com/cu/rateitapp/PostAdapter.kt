@@ -1,13 +1,19 @@
 package com.cu.rateitapp
 
+import android.graphics.drawable.Drawable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.DataSource
+import com.bumptech.glide.load.engine.GlideException
+import com.bumptech.glide.request.RequestListener
+import com.bumptech.glide.request.target.Target
 import com.cu.rateitapp.Models.Post
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter
 import com.firebase.ui.firestore.FirestoreRecyclerOptions
@@ -26,6 +32,7 @@ class PostAdapter(options: FirestoreRecyclerOptions<Post>, private val listener:
         val upVote : ImageView = itemView.findViewById(R.id.upVote)
         val downVote: ImageView = itemView.findViewById(R.id.DownVote)
         val photo : ImageView = itemView.findViewById(R.id.photo)
+        val progressBar:ProgressBar = itemView.findViewById(R.id.post_progress_bar)
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostViewHolder {
         val viewHolder = PostViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_post,parent,false))
@@ -40,14 +47,33 @@ class PostAdapter(options: FirestoreRecyclerOptions<Post>, private val listener:
         }
        return viewHolder
     }
-
     override fun onBindViewHolder(holder: PostViewHolder, position: Int, model: Post) {
-
         holder.postTitle.text = model.getPostText()
         holder.username.text = model.getCreatedBy().getUserName()
         Glide.with(holder.userImage.context).load(model.getCreatedBy().getPhotoUrl()).circleCrop().into(holder.userImage)
         holder.createdAt.text = Utils.getTimeAgo(model.getCreatedAt())
-        Glide.with(holder.photo.context).load(model.getPhotoUrl()).into(holder.photo)
+        holder.progressBar.visibility = View.VISIBLE
+        Glide.with(holder.photo.context).load(model.getPhotoUrl()).listener(object :RequestListener<Drawable>{
+            override fun onLoadFailed(
+                e: GlideException?,
+                model: Any?,
+                target: Target<Drawable>?,
+                isFirstResource: Boolean
+            ): Boolean {
+                holder.progressBar.visibility = View.GONE
+                return false
+            }
+            override fun onResourceReady(
+                resource: Drawable?,
+                model: Any?,
+                target: Target<Drawable>?,
+                dataSource: DataSource?,
+                isFirstResource: Boolean
+            ):Boolean {
+                holder.progressBar.visibility = View.GONE
+                return false
+            }
+        }).into(holder.photo)
         val auth = Firebase.auth
         val currentUser = auth.currentUser!!.uid
         val isUpVoted = model.getUpVote().contains(currentUser)
@@ -65,7 +91,6 @@ class PostAdapter(options: FirestoreRecyclerOptions<Post>, private val listener:
         val vote = model.getUpVote().size - model.getDownVote().size
         holder.voteCount.text = vote.toString()
     }
-
 }
 interface IPostAdapter{
     fun onDownVoteClicked(postId:String){

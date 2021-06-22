@@ -90,7 +90,15 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="@id/contraintLayout"/>
-
+        <ProgressBar
+            android:id="@+id/post_progress_bar"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@id/photo"
+            app:layout_constraintLeft_toLeftOf="@id/photo"
+            app:layout_constraintRight_toRightOf="@id/photo"
+            app:layout_constraintBottom_toBottomOf="@id/photo"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.cardview.widget.CardView>
